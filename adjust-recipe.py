@@ -1,23 +1,23 @@
 from tokenize import String
 
-new_ingridients=True
-ingridients=[]
+new_ingredients=True
+ingredients=[]
 weight=[]
-satuan=[]
+units=[]
 ratio=0
 
 print("==== RESEP ASLI =====")
-while new_ingridients:
+while new_ingredients:
     print(" ")
     user_input = input("Masukkan nama bahan (atau x jika selesai) : ")
     if user_input=='x':
-        new_ingridients=False
+        break
     else:
-        ingridients.append(user_input)
+        ingredients.append(user_input)
         user_input=float(input("Masukkan berat bahan : "))
         weight.append(user_input)
-        user_input=input("Masukkan satuan bahan : ")
-        satuan.append(user_input)
+        user_input=input("Masukkan units bahan : ")
+        units.append(user_input)
 
 print("")
 print("==== ADJUST RECIPE ==== ")
@@ -26,5 +26,5 @@ ratio=user_input/weight[0]
 
 print("")
 print("==== YOUR RECIPE =====")
-for x in range(0,len(ingridients)):
-    print(ingridients[x],", ",weight[x]*ratio,", ", satuan[x])
+for x in range(0,len(ingredients)):
+    print(ingredients[x]," : ",weight[x]*ratio," ", units[x])
